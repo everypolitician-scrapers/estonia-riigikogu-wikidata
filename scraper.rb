@@ -9,3 +9,7 @@ WikiData::Category.new('Kategooria:XIII_Riigikogu_liikmed', 'et').wikidata_ids.e
   # puts data
   ScraperWiki.save_sqlite([:id], data)
 end
+
+require 'rest-client'
+warn RestClient.post ENV['MORPH_REBUILDER_URL'], {} if ENV['MORPH_REBUILDER_URL']
+
